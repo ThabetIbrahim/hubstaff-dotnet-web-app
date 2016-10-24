@@ -1,0 +1,71 @@
+<div class = "second-header" >
+	<h1>Screenshots</h1>
+
+    @{
+		var start_time = "";
+		var stop_time = "";
+		int i = 0;
+		
+
+    }
+
+	@if(ViewBag.screenshots != null){
+        if(ViewBag.screenshots["screenshots"] != null)
+        {
+            foreach(var screenshot in ViewBag.screenshots["screenshots"])
+            {
+                <img src = "@screenshot["url"]" >
+            }
+        }
+	}	
+    @using (Html.BeginForm())
+    {
+    
+		<div class="container">
+		    <div class="row">
+		        <div class='col-md-12'>
+                @foreach (var item in ViewBag.param) {
+                    if(item.Key == "options")
+                    {
+                        foreach(var item2 in item.Value)
+                        {
+                            if(ViewBag.value_type[item2] == "input")
+                            {
+                                <div class = "input-container" ><span class = "title">@item2</span><input type = "text" name = "options[@item2]" ></div>
+                            }else if(ViewBag.value_type[item2] == "datetime")
+                            {
+                                <div class = "input-container" ><span class = "title">@item2</span><input type = "text" name = "options[@item2]" class="form-control time" ></div>
+                            }else
+                            {
+                                <div class = "input-container" ><span class = "title">@item2</span><select name = "options[@item2]" ><option>0</option><option>1</option></select></div>
+                            }
+                        }
+                    }else
+                    {
+                        if(ViewBag.value_type[item.Key] == "input")
+                        {
+                            <div class = "input-container" ><span class = "title">@item.Key</span><input type = "text" name = "@item.Key" ></div>
+                        }else if(ViewBag.value_type[item.Key] == "datetime")
+                        {
+                            <div class = "input-container" ><span class = "title">@item.Key</span><input type = "text" name = "@item.Key" class="form-control time" ></div>
+                        }else
+                        {
+                            <div class = "input-container" ><span class = "title">@item.Key</span><select name = "@item.Key" ><option>0</option><option>1</option></select></div>
+                        }
+                    }
+                }
+		        </div>
+		        <script type="text/javascript">
+		            $(function () {
+		                $('.time').datetimepicker({
+		                	format: "YYYY-MM-DD"
+		                });
+		            });
+		        </script>
+		    </div>
+		</div>
+		<br />
+		<input type = "submit" class = "link" value = "Fetch">
+
+    }
+</div>

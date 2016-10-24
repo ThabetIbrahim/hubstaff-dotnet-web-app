@@ -1,0 +1,28 @@
+<h1>
+	Welcome to Hubstaff-PHP Api Tutorial
+</h1>
+<h5>In this tutorial you'll learn how to connect the Api with your webapp and easily retrieve infomation from The api</h5>
+<br>
+<br>
+@using (Html.BeginForm())
+{
+    @if(ViewBag.auth_token != "")
+    {
+    	<div class = 'info'>Your auth token is: @ViewBag.auth_token</div>
+    }
+	@if(ViewBag.auth_token == "")
+	{
+		<p>
+			<a href = "#" class = "connect" >Connect to Hubstaff</a>
+			<div class = "hubstaff-form" @if(ViewBag.email == null){ <text> style = "display: none" </text> } >
+			<input type="text" class="text" value="@ViewBag.email" id="email" name="email" placeholder="Please add your hubstaff account email" />
+			<input type="text" class="text" value="@ViewBag.password" id="email" name="password" placeholder="Please add your hubstaff account password" />
+			<br>
+			<input type="submit" class="submit" name = "submit" value="Connect" />
+			</div>
+		</p>
+	}
+
+   
+    
+}
