@@ -14,7 +14,7 @@ Using command line navigate to the .NET app directory and run
 	var app_token = "your hubstaff app token"
 	hubstaff.client hubstaff_api = new hubstaff.client(app_token);
 ```
-**Step 2:** Generate the authentication token.
+**Step 2:** Define a function to retrieve a user's authentication token.
 
 ```cs
 	using System.Collections.Generic;
@@ -51,7 +51,7 @@ Using command line navigate to the .NET app directory and run
 ```
 
 
-**Step 3:** Generate the report.
+**Step 3:** define a function to retrieve a user's report.
 
 ```cs
 	using System;
@@ -116,7 +116,7 @@ Using command line navigate to the .NET app directory and run
 	}
 ```
 
-**Step 4:** Generate the screenshots.
+**Step 4:** define a function to retrieve a user's screenshots.
 
 ```cs
 
