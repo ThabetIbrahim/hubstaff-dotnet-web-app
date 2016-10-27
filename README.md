@@ -14,9 +14,7 @@ Using command line navigate to the .NET app directory and run
 	var app_token = "your hubstaff app token"
 	hubstaff.client hubstaff_api = new hubstaff.client(app_token);
 ```
-**Step 2:** Use hubstaff functions in your controllers.
-
-Authentication token generation controller
+**Step 2:** Generate the authentication token.
 
 ```cs
 	using System.Collections.Generic;
@@ -53,7 +51,7 @@ Authentication token generation controller
 ```
 
 
-Reports generation controller
+**Step 3:** Generate the report.
 
 ```cs
 	using System;
@@ -118,10 +116,9 @@ Reports generation controller
 	}
 ```
 
-Screenshots generation controller
+**Step 4:** Generate the screenshots.
 
 ```cs
-	// Generate the screenshots
 
 	using System;
 	using System.Collections.Generic;
@@ -180,6 +177,6 @@ Screenshots generation controller
 	}
 ```
 
-**Step 3:[Your Turn]** Create forms that your users can pass the
+**Step 5:[Your Turn]** Create forms that your users can pass the
 required parameters into, so that they retrieve & display the exact data they
 want.
